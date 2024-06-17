@@ -1,96 +1,159 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<meta name="keywords" content=""/>
-		<meta name="description" content=""/>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
 		<title>送给谢谢</title>
 		<style style="text/css">
-			*{margin:0;padding:0;}
-			body{background:red;background-size:cover;}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background: #fff;
+				background-size: cover;
+			}
+
 			/*start top*/
-			
 		</style>
 	</head>
-	<body>
-		<!--start top-->
-		<div class="top">
-			<marquee behavior="alternate">时光不老，我们不散</marquee>
-		</div>
-		<!--end top-->
-		<!--start box-->
-		<div class="box">
-			333
-		</div>
-		<select id="province">
-		  <option value="">请选择省份</option>
-		  <option value="浙江省">浙江省</option>
-		  <option value="广东省">广东省</option>
-		</select>
-		
-		<!-- 城市选择器 -->
-		<select id="city" disabled>
-		  <option value="">请先选择省份</option>
-		</select>
+	<body onload="Init()">
 	
+
+		<form name=newform>
+			<table>
+				
+				<input name="txtPlace" style="width:100px" onkeyup="SelectTip(0)"> </td>
+				<tr>
+					<td>
+						<div style="display: flex;justify-content: ;">
+							<div>
+								
+								
+								
+								<span id="myselect">
+									<select name="myselect" style="width:100px" size=10
+										onchange="txtPlace.value=options[selectedIndex].text;" id="province">
+										<option value="">请选择小谢药品</option>
+										<option value="奥沙利铂">奥沙利铂</option>
+										<option value="卡铂">卡铂</option>
+										<option value="顺铂（避光）">顺铂（避光）</option>
+										<option value="注射用奈达铂">注射用奈达铂</option>
+										<option value="依托泊苷（浓度每毫升不超过0.25mg）">依托泊苷（浓度每毫升不超过0.25mg）</option>
+										<option value="白蛋白紫杉醇">白蛋白紫杉醇</option>
+										<option value="紫杉醇注射液">紫杉醇注射液</option>
+									</select>
+								</span>
+							</div>
+							<div id="ega" style="margin-left: 10px;margin-top: -20px;">
+							  
+							   
+							</div>
+							<div id="city" style="margin-left: 10px;margin-top: -20px;">
+							 
+							   
+							</div>
+							<div id="eg" style="margin-left: 10px;margin-top: -20px;">
+							
+							   
+							</div>
+						</div>
+						
+						
+					</td>
+				</tr>
+
+			</table>
+		</form>
+
 		<!--end box-->
 		<!--start text-->
 		<div id="text"></div>
 		<!--end text-->
-		<embed src="acctr.flac"/>
+		
 
 		<script src="js/jquery.min.js"></script>
 		<!--雪花-->
 		<script src="js/snow.js"></script>
 		<script>
-			
 				const provinceSelect = document.getElementById('province');
 				const citySelect = document.getElementById('city');
-				
+				const ega = document.getElementById('ega');
+				const eg = document.getElementById('eg');
 				const cities = [
-				  { province: '浙江省', name: '杭州市' },
-				  { province: '浙江省', name: '宁波市' },
-				  { province: '浙江省', name: '温州市' },
-				  { province: '广东省', name: '广州市' },
-				  { province: '广东省', name: '深圳市' },
-				  { province: '广东省', name: '珠海市' }
+				  { province: '奥沙利铂', name: '5%葡萄糖250ml' ,eg:'',ega:""},
+				  { province: '卡铂', name: '2.5%葡萄糖注射液250～500ml',eg:'',ega:"" },
+				  { province: '顺铂（避光）', name: '0.9%氯化钠250ml',eg:'',ega:"" },
+				  { province: '注射用奈达铂', name: '0.9%氯化钠500ml',eg:'',ega:"" },
+				  { province: '依托泊苷（浓度每毫升不超过0.25mg）', name: '0.9%氯化钠',eg:'',ega:"" },
+				  { province: '白蛋白紫杉醇', name: '0.9%氯化钠' ,eg:'（eg：白紫0.4g 氯化钠40/0.5=80ml）',ega:""},
+				  { province: '紫杉醇注射液', name: '0.9%氯化钠' ,eg:'注意有无糖尿病，有注意加8U胰岛素）',ega:'（本品之前的10～12小时先口服地塞米松5～20mg，在滴注本品之前30分钟再肌注或口服苯海拉明50mg，和静脉注射西咪替丁0.3g或雷尼替丁50mg）'},
+				  
 				];
-				
-				// 根据所选省份生成城市选项
+
+
 				function generateCityOptions() {
-				  // 获取当前所选省份的值
+
 				  const province = provinceSelect.value;
-				  // 清空原有城市选项
+
 				  clearCityOptions();
-				  // 生成新的城市选项
+
 				  for (let i = 0; i < cities.length; i++) {
 				    const city = cities[i];
 				    if (city.province === province) {
-				      const option = document.createElement('option');
-				      option.value = city.name;
-				      option.text = city.name;
-				      citySelect.appendChild(option);
+				      //const option = document.createElement('div');
+				      // option.document.createTextNode(city.name) ;
+				      // option.text = city.name;
+				      citySelect.appendChild(document.createTextNode(city.name));
+					  ega.appendChild(document.createTextNode(city.ega));
+					  eg.appendChild(document.createTextNode(city.eg));
 				    }
 				  }
-				  // 启用城市选择器
-				  citySelect.disabled = false;
+
+				 // citySelect.disabled = false;
 				}
-				
-				// 清空城市选项
+
+
 				function clearCityOptions() {
 				  while (citySelect.firstChild) {
 				    citySelect.removeChild(citySelect.firstChild);
+					ega.removeChild(ega.firstChild);
+					eg.removeChild(eg.firstChild);
 				  }
-				  // 禁用城市选择器
+
 				  citySelect.disabled = true;
 				}
-				
+
 				provinceSelect.addEventListener('change', function(event) {
 				  generateCityOptions();
 				});
-				
+
 				generateCityOptions();
-				
+
+
+			var TempArr = []; //存贮option
+
+			function Init() {
+				var SelectObj = document.newform.elements["myselect"]
+				/*先将数据存入数组*/
+				with(SelectObj)
+				for (i = 0; i < length; i++) TempArr[i] = [options[i].text, options[i].value]
+			}
+
+			function SelectTip(flag) {
+				var TxtObj = document.newform.elements["txtPlace"]
+				var SelectObj = document.getElementById("myselect")
+				var Arr = []
+				with(SelectObj) {
+					var SelectHTML = innerHTML.match(/<[^>]*>/)[0]
+					for (i = 0; i < TempArr.length; i++)
+						if (TempArr[i][0].indexOf(TxtObj.value) != -1 || flag) //数组中若找到输入的内容，添option。若flag为true,对下拉框初始化
+							Arr[Arr.length] = "<option value='" + TempArr[i][1] + "'>" + TempArr[i][0] + "</option>"
+					innerHTML = SelectHTML + Arr.join() + "</SELECT>"
+				}
+			}
 		</script>
 	</body>
 </html>
