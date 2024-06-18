@@ -12,8 +12,10 @@
 			}
 
 			body {
-				background: #fff;
-				background-size: cover;
+				background: url('img/xk.png') no-repeat;
+				background-size: 100% 100%;
+				background-attachment: fixed;
+				margin: 0;
 			}
 
 			/*start top*/
@@ -21,20 +23,20 @@
 	</head>
 	<body onload="Init()">
 	
-
+	<div style="width: 90%; margin: 20px auto;margin-left: 250px;margin-top: 130px;">
 		<form name=newform>
-			<table>
+			<table >
 				
-				<input name="txtPlace" style="width:100px" onkeyup="SelectTip(0)"> </td>
+				<input name="txtPlace" style="min-width: 310px;height: 30px;line-height:30px;padding-left: 7px;box-sizing: border-box;font-size: 16px;"  onkeyup="SelectTip(0)"> </td>
 				<tr>
 					<td>
 						<div style="display: flex;justify-content: ;">
-							<div>
+							<div style="margin-left: -2px;">
 								
 								
 								
 								<span id="myselect">
-									<select name="myselect" style="width:100px" size=10
+									<select name="myselect" style="min-width:310px;height: 30px;line-height:30px;padding-left: 3px;box-sizing: border-box;font-size: 16px;" 
 										onchange="txtPlace.value=options[selectedIndex].text;" id="province">
 										<option value="">请选择小谢药品</option>
 										<option value="奥沙利铂">奥沙利铂</option>
@@ -44,18 +46,61 @@
 										<option value="依托泊苷（浓度每毫升不超过0.25mg）">依托泊苷（浓度每毫升不超过0.25mg）</option>
 										<option value="白蛋白紫杉醇">白蛋白紫杉醇</option>
 										<option value="紫杉醇注射液">紫杉醇注射液</option>
+										<option value="贝伐珠单抗">贝伐珠单抗</option>
+										<option value="尼妥珠单抗">尼妥珠单抗</option>
+										<option value="西妥昔单抗">西妥昔单抗</option>
+										<option value="替雷利珠单抗">替雷利珠单抗</option>
+										<option value="特瑞普利单抗">特瑞普利单抗</option>
+										<option value="信迪利单抗">信迪利单抗</option>
+										<option value="帕博利珠单抗">帕博利珠单抗</option>
+										<option value="培美曲塞">培美曲塞</option>
+										<option value="注射用吉西他滨">注射用吉西他滨</option>
+										<option value="伊立替康">伊立替康</option>
+										<option value="亚叶酸钙">亚叶酸钙</option>
+										<option value="注射用多西他赛">注射用多西他赛</option>
+										<option value="长春瑞滨">长春瑞滨</option>
+										<option value="异环磷酰胺">异环磷酰胺</option>
+										<option value="伊班膦酸钠（佳诺顺）4mg">伊班膦酸钠（佳诺顺）4mg</option>
+										<option value="唑来膦酸5mg 100ml">唑来膦酸5mg 100ml</option>
+										<option value="唑来膦酸注射液4mg">唑来膦酸注射液4mg</option>
+										<option value="浓氯化钠注射液3g">浓氯化钠注射液3g</option>
+										<option value="氯化钾注射液1.5g">氯化钾注射液1.5g</option>
+										<option value="葡萄糖酸钙注射液1g">葡萄糖酸钙注射液1g</option>
+										<option value="多烯磷脂酰胆碱20mg">多烯磷脂酰胆碱20mg</option>
+										<option value="还原型谷胱甘肽1.8g">还原型谷胱甘肽1.8g</option>
+										<option value="思美泰1000mg">思美泰1000mg</option>
+										<option value="多索茶碱 0.2g">多索茶碱 0.2g</option>
+										<option value="盐酸氨溴索30mg">盐酸氨溴索30mg</option>
+										<option value="甲泼尼龙 40mg">甲泼尼龙 40mg</option>
+										<option value="硫酸特布他林">硫酸特布他林</option>
+										<option value="吸入用布地奈德">吸入用布地奈德</option>
+										<option value="富露施">富露施</option>
+										<option value="氯化钾1支">氯化钾1支</option>
+										<option value="葡萄糖注射液60ml">葡萄糖注射液60ml</option>
+										<option value="奥美拉唑 40mg">奥美拉唑 40mg</option>
+										<option value="泮托拉唑 40mg">泮托拉唑 40mg</option>
+										<option value="皮试">皮试</option>
+										<option value="注射用哌拉西林他唑巴坦 3.75g">注射用哌拉西林他唑巴坦 3.75g</option>
+										<option value="注射用头孢哌酮舒巴坦（舒普深） 3g">注射用头孢哌酮舒巴坦（舒普深） 3g</option>
+										<option value="血糖高泵">血糖高泵</option>
+										<option value="止血药">止血药</option>
+										<option value="止血敏">止血敏</option>
+										<option value="止血敏1支">止血敏1支</option>
+										<option value="氨甲环酸1支">氨甲环酸1支</option>
+										<option value="注射用福沙匹坦0.15g">注射用福沙匹坦0.15g</option>
+										
+										<option value="浓哪啊氯化钠100ml">浓哪啊氯化钠100ml</option>
 									</select>
 								</span>
 							</div>
-							<div id="ega" style="margin-left: 10px;margin-top: -20px;">
-							  
-							   
+							<div id="ega" style="margin-left: 10px;margin-top: -30px;max-width: 300px;color: #fff;">
+							
 							</div>
-							<div id="city" style="margin-left: 10px;margin-top: -20px;">
+							<div id="city" style="color: #fff;margin-left: 10px;margin-top: -30px;padding-left: 5px;padding-right: 5px;">
 							 
 							   
 							</div>
-							<div id="eg" style="margin-left: 10px;margin-top: -20px;">
+							<div id="eg" style="color: #fff;margin-left: 10px;margin-top: -30px;">
 							
 							   
 							</div>
@@ -67,7 +112,7 @@
 
 			</table>
 		</form>
-
+</div>
 		<!--end box-->
 		<!--start text-->
 		<div id="text"></div>
@@ -78,6 +123,8 @@
 		<!--雪花-->
 		<script src="js/snow.js"></script>
 		<script>
+			
+			
 				const provinceSelect = document.getElementById('province');
 				const citySelect = document.getElementById('city');
 				const ega = document.getElementById('ega');
@@ -89,10 +136,55 @@
 				  { province: '注射用奈达铂', name: '0.9%氯化钠500ml',eg:'',ega:"" },
 				  { province: '依托泊苷（浓度每毫升不超过0.25mg）', name: '0.9%氯化钠',eg:'',ega:"" },
 				  { province: '白蛋白紫杉醇', name: '0.9%氯化钠' ,eg:'（eg：白紫0.4g 氯化钠40/0.5=80ml）',ega:""},
-				  { province: '紫杉醇注射液', name: '0.9%氯化钠' ,eg:'注意有无糖尿病，有注意加8U胰岛素）',ega:'（本品之前的10～12小时先口服地塞米松5～20mg，在滴注本品之前30分钟再肌注或口服苯海拉明50mg，和静脉注射西咪替丁0.3g或雷尼替丁50mg）'},
-				  
+				  { province: '紫杉醇注射液', name: '0.9%氯化钠' ,eg:'（注意有无糖尿病，有注意加8U胰岛素）',ega:'（本品之前的10～12小时先口服地塞米松5～20mg，在滴注本品之前30分钟再肌注或口服苯海拉明50mg，和静脉注射西咪替丁0.3g或雷尼替丁50mg）'},
+				  { province: '贝伐珠单抗', name: '0.9%氯化钠250ml',eg:'',ega:"" },
+				  { province: '尼妥珠单抗', name: '0.9%氯化钠250ml',eg:'',ega:"" },
+				  { province: '西妥昔单抗', name: '0.9%氯化钠500ml',eg:'',ega:"" },
+				  { province: '替雷利珠单抗', name: '0.9%氯化钠100ml',eg:'',ega:"" },
+				  { province: '特瑞普利单抗', name: '0.9%氯化钠100ml',eg:'',ega:"" },
+				  { province: '信迪利单抗', name: '0.9%氯化钠100ml',eg:'',ega:"" },
+				  { province: '帕博利珠单抗', name: '0.9%氯化钠100ml',eg:'',ega:"" },
+				  { province: '培美曲塞', name: '0.9%氯化钠',eg:'（eg：0.5g氟尿嘧啶+100mlNS+1.5g氟尿嘧啶+500mlNS泵23h+1.5g氟尿嘧啶+500mlNS泵23h）',ega:"" },
+				  { province: '注射用吉西他滨', name: '0.9%氯化钠100ml',eg:'',ega:"" },
+				  { province: '伊立替康', name: '0.9%氯化钠250ml',eg:'',ega:"" },
+				  { province: '亚叶酸钙', name: '0.9%氯化钠250ml',eg:'',ega:"" },
+				  { province: '氟尿嘧啶', name: '0.9%氯化钠',eg:'（eg：0.5g氟尿嘧啶+100mlNS+1.5g氟尿嘧啶+500mlNS泵23h+1.5g氟尿嘧啶+500mlNS泵23h）',ega:"" },
+				  { province: '注射用多西他赛', name: '5%葡萄糖250ml',eg:'',ega:"（用药前1天开始，每日16mg(例如：每日2次，每次8mg)，持续3天&治疗前列腺癌时，同时给予强的松或强的松龙，推荐化疗前用药剂量及方案为：患者在接受多西他赛治疗前12小时，3小时及1小时，口服地塞米松8mg）" },
+				  { province: '长春瑞滨', name: '氯化钠100ml',eg:'',ega:"" },
+				  { province: '异环磷酰胺', name: '氯化钠500ml',eg:'',ega:"" },
+				  { province: '伊班膦酸钠（佳诺顺）4mg', name: '氯化钠500ml',eg:'4-6小时滴完',ega:"保护骨" },
+				  { province: '唑来膦酸5mg 100ml', name: '',eg:'',ega:"保护骨" },
+				  { province: '唑来膦酸注射液4mg', name: '氯化钠100ml',eg:'',ega:"保护骨" },
+				  { province: '浓氯化钠注射液3g', name: '氯化钠100ml',eg:'',ega:"" },
+				  { province: '氯化钾注射液1.5g', name: '5%葡萄糖500ml',eg:'',ega:"" },
+				  { province: '葡萄糖酸钙注射液1g', name: '5%葡萄糖100ml',eg:'',ega:"" },
+				  { province: '多烯磷脂酰胆碱20mg', name: '5%葡萄糖250ml',eg:'',ega:"保肝" },
+				  { province: '还原型谷胱甘肽1.8g', name: '氯化钠100ml',eg:'',ega:"保肝" },
+				  { province: '思美泰1000mg', name: '氯化钠250ml',eg:'',ega:"保肝 qd" },
+				  { province: '多索茶碱 0.2g', name: '氯化钠100ml',eg:'q12h',ega:"平喘" },
+				  { province: '盐酸氨溴索30mg', name: '氯化钠100ml',eg:'bid',ega:"化痰" },
+				  { province: '甲泼尼龙 40mg', name: '氯化钠100ml',eg:'qd',ega:"化痰" },
+				  { province: '硫酸特布他林', name: '雾化吸入用 1支5mg',eg:'tid',ega:"" },
+				  { province: '吸入用布地奈德', name: '雾化吸入  2支4mg',eg:'bid',ega:"" },
+				  { province: '富露施', name: '雾化吸入 1支 3mg',eg:'',ega:"bid" },
+				  { province: '氯化钾1支', name: '葡萄糖500ml 维生素C 1支',eg:'',ega:"补液" },
+				  { province: '葡萄糖注射液60ml', name: '葡萄糖氯化钠500ml 氯化钾1支',eg:'补液',ega:"" },
+				  { province: '奥美拉唑 40mg', name: '氯化钠100ml',eg:'bid',ega:"护胃" },
+				  { province: '泮托拉唑 40mg', name: '氯化钠100ml',eg:'qd',ega:"护胃" },
+				  { province: '皮试', name: '氯化钠100ml 皮试 注射用青霉素',eg:'皮试用',ega:"抗炎" },
+				  { province: '注射用哌拉西林他唑巴坦 3.75g', name: '氯化钠100ml',eg:'q8h',ega:"抗炎" },
+				  { province: '注射用头孢哌酮舒巴坦（舒普深） 3g', name: '氯化钠100ml',eg:'q8h',ega:"抗炎" },
+				  { province: '血糖高泵', name: '50ml氯化钠 50单位胰岛素 走2 且测毛糖',eg:'q1h',ega:"" },
+				  { province: '止血药', name: '巴曲亭 1支',eg:'qd/bid肌肉注射',ega:"" },
+				  { province: '止血敏', name: '用于血小板减低的预防，各种出血',eg:'',ega:"" },
+				  { province: '止血敏1支', name: '氯化钠250',eg:'bid/tid 静脉滴注',ega:"" },
+				  { province: '氨甲环酸1支', name: '氯化钠100ml',eg:'qd/bid 静脉滴注',ega:"" },
+				  { province: '注射用福沙匹坦0.15g', name: '氯化钠145ml',eg:'',ega:"" },
+				  { province: '浓哪啊氯化钠100ml', name: '浓氯化钠针3g 泵6h',eg:'',ega:"补钠" }, 
 				];
-
+				
+				
+				
 
 				function generateCityOptions() {
 
